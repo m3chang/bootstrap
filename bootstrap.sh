@@ -1,2 +1,2 @@
-sudo pacman -S python-colorama
+sudo pacman -S python-colorama python-typer
 sudo python bootstrap.py

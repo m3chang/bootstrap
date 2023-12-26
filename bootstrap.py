@@ -1,4 +1,4 @@
-from colorama import init,Fore
+from colorama import init,Fore,Style
 init()
 import os
 import sys
@@ -6,12 +6,16 @@ import typer
 
 def info(msg):
     print(Fore.WHITE + msg)
+    print(Style.RESET_ALL)
+
 
 def yellow(msg):
     print(Fore.YELLOW + msg)
+    print(Style.RESET_ALL)
 
 def warn(msg):
     print(Fore.RED + msg)
+    print(Style.RESET_ALL)
 
 #System setup
 if os.getuid() != 0:
@@ -47,15 +51,16 @@ def system_setup():
 def install_pkgs():
     yellow("Installing packages...")
     PKGS = ["btop","htop","mc","byobu","xfce4-terminal","neovim","vim","yay"]
-    os.system("pacman -S " + " ".join(PKGS))
-    YAY = ["google-chrome"]
-    os.system("yay -S " + " ".join(PKGS))
+    FONTS = ["ttf-intone-nerd"]
+    os.system("pacman -S " + " ".join(PKGS + FONTS))
+    info("installing google-chrome")
+    os.system("sudo -u niklas yay -S google-chrome") 
 
 
 
 if __name__ == '__main__':
     system_setup()
-    #install_pkgs()
+    install_pkgs()
 
 
 

@@ -1,0 +1,11 @@
+##
+## Manjaro Linux default mirrorlist
+## Generated on 2023-12-25 20:04
+##
+## Please use 'pacman-mirrors -f [NUMBER] [NUMBER]' to modify mirrorlist
+## (Use 0 for all mirrors)
+##
+
+## Country : Xtom
+Server = https://mirror.xtom.hk/manjaro/stable/$repo/$arch
+
